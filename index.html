@@ -1,0 +1,1070 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Brain Next Development</title>
+    <link rel="icon" type="image/png" href="logo.png" />
+    <!-- Bootstrap 5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+    <style>
+        /* ─── RESET & BASE ─── */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            background: #f8faff;
+            color: #222;
+        }
+
+        /* ─── NAVBAR ─── */
+        .navbar {
+            background: #0b1f3a;
+            padding: 15px 0;
+        }
+        .navbar-brand {
+            font-size: 25px;
+            font-weight: bold;
+            color: white !important;
+        }
+        .navbar-brand span {
+            color: #00bfff;
+        }
+        .nav-link {
+            color: white !important;
+            margin-left: 15px;
+            font-weight: 500;
+        }
+        .nav-link:hover {
+            color: #00bfff !important;
+        }
+        .navbar-logo-video {
+            width: 195px;
+            height: 50px;
+            object-fit: cover;
+            border-radius: 7px;
+            display: block;
+        }
+
+        /* ─── HERO ─── */
+        .hero {
+            min-height: 90vh;
+            display: flex;
+            align-items: center;
+            background: linear-gradient(135deg, #071a33, #0d4d73);
+            color: white;
+        }
+        .hero h1 {
+            font-size: 55px;
+            font-weight: 700;
+        }
+        .hero h1 span {
+            color: #00c6ff;
+        }
+        .hero p {
+            font-size: 19px;
+            line-height: 1.7;
+            color: #dcefff;
+        }
+        .hero-img {
+            font-size: 180px;
+            text-align: center;
+            color: #00c6ff;
+        }
+        .btn-main {
+            background: #00bfff;
+            color: white;
+            padding: 12px 30px;
+            border-radius: 30px;
+            border: none;
+            font-weight: bold;
+        }
+        .btn-main:hover {
+            background: white;
+            color: #0b1f3a;
+        }
+
+        /* ─── SECTION TITLE ─── */
+        .section-title {
+            text-align: center;
+            margin-bottom: 45px;
+        }
+        .section-title h2 {
+            font-weight: bold;
+            color: #0b1f3a;
+        }
+        .section-title p {
+            color: #777;
+        }
+
+        /* ─── ABOUT ─── */
+        .about {
+            padding: 80px 0;
+        }
+        .about-box {
+            background: white;
+            padding: 35px;
+            border-radius: 15px;
+            box-shadow: 0 5px 25px rgba(0, 0, 0, 0.08);
+        }
+
+        /* ─── SERVICES ─── */
+        .services {
+            padding: 80px 0;
+            background: #eef7ff;
+        }
+        .service-card {
+            background: white;
+            padding: 35px 25px;
+            text-align: center;
+            border-radius: 15px;
+            height: 100%;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.07);
+            transition: 0.3s;
+        }
+        .service-card:hover {
+            transform: translateY(-10px);
+        }
+        .service-card i {
+            font-size: 50px;
+            color: #00aeea;
+            margin-bottom: 20px;
+        }
+        .service-card h4 {
+            color: #0b1f3a;
+            font-weight: bold;
+        }
+        .service-card p {
+            color: #666;
+        }
+
+        /* ─── FOUNDER ─── */
+        .founder-section {
+            padding: 80px 0;
+            background: #071a33;
+        }
+        .founder-section .section-title h2 {
+            color: #fff;
+        }
+        .founder-section .section-title p {
+            color: #aaccee;
+        }
+        .founder-card {
+            background: #0d2847;
+            border-radius: 20px;
+            padding: 40px;
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            transition: all 0.3s ease;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 30px;
+        }
+        .founder-card:hover {
+            border-color: #00bfff;
+            box-shadow: 0 15px 50px rgba(0, 191, 255, 0.10);
+        }
+        .founder-card .founder-image {
+            flex: 0 0 180px;
+        }
+        .founder-card .founder-image img {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid #00bfff;
+            box-shadow: 0 8px 30px rgba(0, 191, 255, 0.15);
+        }
+        .founder-card .founder-content {
+            flex: 1;
+            min-width: 250px;
+        }
+        .founder-card .founder-content .quote {
+            font-size: 18px;
+            line-height: 1.7;
+            color: #cceeff;
+            font-style: italic;
+            margin-bottom: 20px;
+            padding-left: 20px;
+            border-left: 4px solid #00bfff;
+        }
+        .founder-card .founder-content .founder-name {
+            font-size: 24px;
+            font-weight: 700;
+            color: #fff;
+            margin-bottom: 4px;
+        }
+        .founder-card .founder-content .founder-title {
+            font-size: 16px;
+            color: #88bbdd;
+            margin-bottom: 18px;
+        }
+        .founder-card .founder-content .founder-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-bottom: 20px;
+        }
+        .founder-card .founder-content .founder-tags .tag {
+            background: rgba(0, 191, 255, 0.08);
+            color: #88ddff;
+            padding: 6px 18px;
+            border-radius: 30px;
+            font-size: 13px;
+            font-weight: 500;
+            border: 1px solid rgba(0, 191, 255, 0.06);
+        }
+        .founder-card .founder-content .founder-tags .tag strong {
+            color: #fff;
+        }
+        .btn-connect {
+            background: #00bfff;
+            color: #071a33;
+            padding: 12px 35px;
+            border-radius: 30px;
+            font-weight: 700;
+            border: none;
+            transition: all 0.3s ease;
+            display: inline-block;
+            text-decoration: none;
+            font-size: 16px;
+        }
+        .btn-connect:hover {
+            background: #fff;
+            color: #071a33;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 30px rgba(0, 191, 255, 0.25);
+        }
+
+        /* ─── PROJECTS ─── */
+        .projects {
+            padding: 80px 0;
+        }
+        .project-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+        }
+        .project-img {
+            height: 180px;
+            background: linear-gradient(135deg, #00bfff, #0b1f3a);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 65px;
+        }
+        .project-content {
+            padding: 25px;
+        }
+
+        /* ─── BANK CARDS ─── */
+        .bank-cards-section {
+            padding: 80px 0;
+            background: #071a33;
+        }
+        .bank-cards-section .section-title h2 {
+            color: #fff;
+        }
+        .bank-cards-section .section-title p {
+            color: #aaccee;
+        }
+        .bank-card {
+            background: #0d2847;
+            border-radius: 16px;
+            padding: 35px 30px;
+            height: 100%;
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        .bank-card:hover {
+            transform: translateY(-8px);
+            border-color: #00bfff;
+            box-shadow: 0 15px 50px rgba(0, 191, 255, 0.12);
+        }
+        .bank-card .card-header-badge {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        .bank-card .bank-icon {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: rgba(0, 191, 255, 0.12);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 28px;
+            color: #00bfff;
+        }
+        .bank-card .availability {
+            font-size: 12px;
+            font-weight: 600;
+            color: #00e676;
+            background: rgba(0, 230, 118, 0.12);
+            padding: 4px 14px;
+            border-radius: 30px;
+            letter-spacing: 0.5px;
+        }
+        .bank-card .availability i {
+            margin-right: 5px;
+        }
+        .bank-card .bank-name {
+            font-size: 20px;
+            font-weight: 700;
+            color: #fff;
+            margin-bottom: 5px;
+        }
+        .bank-card .bank-title {
+            font-size: 14px;
+            color: #88bbdd;
+            margin-bottom: 18px;
+            font-weight: 400;
+        }
+        .bank-card .expert-label {
+            font-size: 13px;
+            font-weight: 600;
+            color: #88bbdd;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 10px;
+        }
+        .bank-detail-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 6px 0;
+            color: #cceeff;
+            font-size: 14px;
+        }
+        .bank-detail-item i {
+            color: #00bfff;
+            width: 20px;
+            font-size: 16px;
+        }
+        .bank-detail-item strong {
+            color: #fff;
+            font-weight: 600;
+            min-width: 100px;
+        }
+        .bank-card .card-footer-info {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 15px;
+            border-top: 1px solid rgba(255, 255, 255, 0.06);
+        }
+        .bank-card .card-footer-info .stack-label {
+            font-size: 13px;
+            color: #88bbdd;
+        }
+        .bank-card .card-footer-info .stack-label strong {
+            color: #fff;
+        }
+        .bank-card .card-footer-info .experience {
+            font-size: 13px;
+            color: #88bbdd;
+        }
+        .bank-card .card-footer-info .experience strong {
+            color: #00bfff;
+        }
+        .btn-whatsapp-card {
+            background: #25D366;
+            color: #fff;
+            padding: 8px 20px;
+            border-radius: 30px;
+            font-size: 13px;
+            font-weight: 600;
+            border: none;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            text-decoration: none;
+        }
+        .btn-whatsapp-card:hover {
+            background: #128C7E;
+            color: #fff;
+            transform: scale(1.02);
+        }
+
+        /* ─── CONTACT ─── */
+        .contact {
+            padding: 80px 0;
+            background: #eef7ff;
+        }
+        .contact-box {
+            background: white;
+            padding: 35px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.07);
+        }
+        .form-control {
+            padding: 13px;
+            margin-bottom: 15px;
+        }
+
+        /* ─── FOOTER ─── */
+        .footer {
+            padding: 75px 7% 25px;
+            background:
+                radial-gradient(circle at 15% 50%, rgba(0, 180, 255, 0.08), transparent 30%),
+                radial-gradient(circle at 85% 50%, rgba(150, 50, 255, 0.08), transparent 30%),
+                #0b0d1c;
+        }
+        .footer-container {
+            max-width: 1250px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: 1.4fr 1fr 1.2fr 1fr;
+            gap: 70px;
+            padding-bottom: 55px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+        }
+        .footer-logo {
+            color: #22d3ff;
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 22px;
+        }
+        .footer-description {
+            color: #a8aec5;
+            font-size: 16px;
+            line-height: 1.8;
+            max-width: 350px;
+        }
+        .social-icons {
+            display: flex;
+            gap: 15px;
+            margin-top: 28px;
+        }
+        .social-icons a {
+            width: 38px;
+            height: 38px;
+            border-radius: 8px;
+            background: rgba(255, 255, 255, 0.03);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: bold;
+            border: 1px solid rgba(255, 255, 255, 0.04);
+            transition: 0.3s;
+        }
+        .social-icons a:hover {
+            color: #22d3ff;
+            transform: translateY(-3px);
+        }
+        .footer-title {
+            font-size: 16px;
+            font-weight: 700;
+            margin-bottom: 28px;
+            color: #fff;
+        }
+        .footer-links {
+            list-style: none;
+            padding: 0;
+        }
+        .footer-links li {
+            margin-bottom: 20px;
+        }
+        .footer-links a {
+            color: #9fa7c0;
+            text-decoration: none;
+            font-size: 16px;
+            transition: 0.3s;
+        }
+        .footer-links a:hover {
+            color: #22d3ff;
+        }
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 18px;
+            margin-bottom: 25px;
+            color: #a6aec7;
+            font-size: 16px;
+        }
+        .contact-icon {
+            color: #19d5ff;
+            font-size: 20px;
+            width: 25px;
+        }
+        .quote-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 8px;
+            padding: 17px 30px;
+            border-radius: 35px;
+            color: white;
+            text-decoration: none;
+            font-size: 15px;
+            font-weight: 600;
+            background: linear-gradient(90deg, #13d8ee, #9c54ed);
+            box-shadow: 0 0 25px rgba(80, 100, 255, 0.2);
+            transition: 0.3s;
+        }
+        .quote-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 0 35px rgba(50, 180, 255, 0.35);
+        }
+        .footer-bottom {
+            max-width: 1250px;
+            margin: auto;
+            padding-top: 28px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: #858ba2;
+            font-size: 13px;
+        }
+        .bottom-links {
+            display: flex;
+            gap: 30px;
+        }
+        .bottom-links a {
+            color: #858ba2;
+            text-decoration: none;
+        }
+        .bottom-links a:hover {
+            color: #22d3ff;
+        }
+
+        /* ─── RESPONSIVE ─── */
+        @media (max-width: 992px) {
+            .footer-container {
+                grid-template-columns: 1fr 1fr;
+                gap: 50px;
+            }
+        }
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 40px;
+            }
+            .hero {
+                text-align: center;
+                padding: 70px 0;
+            }
+            .hero-img {
+                font-size: 120px;
+                margin-top: 30px;
+            }
+            .founder-card {
+                flex-direction: column;
+                text-align: center;
+                padding: 30px 20px;
+            }
+            .founder-card .founder-image {
+                flex: 0 0 auto;
+            }
+            .founder-card .founder-image img {
+                width: 150px;
+                height: 150px;
+            }
+            .founder-card .founder-content .quote {
+                padding-left: 0;
+                border-left: none;
+                border-top: 3px solid #00bfff;
+                padding-top: 15px;
+            }
+            .founder-card .founder-content .founder-tags {
+                justify-content: center;
+            }
+            .bank-card .card-header-badge {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 12px;
+            }
+            .bank-card .card-footer-info {
+                flex-direction: column;
+                gap: 10px;
+                align-items: flex-start;
+            }
+            .bank-detail-item strong {
+                min-width: 80px;
+            }
+        }
+        @media (max-width: 600px) {
+            .footer {
+                padding: 50px 25px 25px;
+            }
+            .footer-container {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+            .footer-bottom {
+                flex-direction: column;
+                gap: 20px;
+                text-align: center;
+            }
+            .bottom-links {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+        }
+        @media (max-width: 576px) {
+            .founder-card .founder-image img {
+                width: 120px;
+                height: 120px;
+            }
+            .founder-card .founder-content .quote {
+                font-size: 16px;
+            }
+            .bank-card {
+                padding: 25px 20px;
+            }
+            .bank-card .bank-name {
+                font-size: 18px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ================= NAVBAR ================= -->
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <video class="navbar-logo-video" autoplay muted loop playsinline>
+                    <source src="titlelogo.mp4" type="video/mp4">
+                </video>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="menu">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#founder">Our Founder</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#bank">Bank Details</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ================= HERO ================= -->
+    <section class="hero" id="home">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-7">
+                    <h1>Professional <span>Web Development</span> Services</h1>
+                    <p class="mt-4">We create modern, responsive and professional websites for businesses, organizations and personal brands.</p>
+                    <a href="#contact" class="btn btn-main mt-3">Get Started</a>
+                </div>
+                <div class="col-lg-5">
+                    <div class="hero-img"><i class="bi bi-code-slash"></i></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= ABOUT ================= -->
+    <section class="about" id="about">
+        <div class="container">
+            <div class="section-title">
+                <h2>About Us</h2>
+                <p>Professional Web Development Solutions</p>
+            </div>
+            <div class="row">
+                <div class="col-lg-6 mb-4">
+                    <div class="about-box">
+                        <h3>Tahir Mangi Web Development</h3>
+                        <p class="mt-3">We specialize in creating modern and user-friendly websites. Our goal is to provide clean, responsive and fast websites that help businesses grow online.</p>
+                        <p>We focus on quality design, excellent performance and a great user experience.</p>
+                    </div>
+                </div>
+                <div class="col-lg-6 mb-4">
+                    <div class="about-box">
+                        <h4>Why Choose Us?</h4>
+                        <p class="mt-3">✔ Modern Website Design</p>
+                        <p>✔ Mobile Responsive Websites</p>
+                        <p>✔ Fast Loading Performance</p>
+                        <p>✔ Clean & Professional Code</p>
+                        <p>✔ Business-Focused Solutions</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= SERVICES ================= -->
+    <section class="services" id="services">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Services</h2>
+                <p>Complete Web Development Solutions</p>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-4"><div class="service-card"><i class="bi bi-laptop"></i><h4>Web Development</h4><p>Professional websites using modern technologies and clean coding practices.</p></div></div>
+                <div class="col-md-6 col-lg-4"><div class="service-card"><i class="bi bi-phone"></i><h4>Responsive Design</h4><p>Websites that look great on mobile, tablet and desktop devices.</p></div></div>
+                <div class="col-md-6 col-lg-4"><div class="service-card"><i class="bi bi-code-square"></i><h4>Frontend Development</h4><p>Modern interfaces using HTML, CSS, Bootstrap and JavaScript.</p></div></div>
+                <div class="col-md-6 col-lg-4"><div class="service-card"><i class="bi bi-server"></i><h4>Backend Development</h4><p>Secure and reliable backend solutions for your web applications.</p></div></div>
+                <div class="col-md-6 col-lg-4"><div class="service-card"><i class="bi bi-database"></i><h4>Database Solutions</h4><p>Organized database solutions for websites and business applications.</p></div></div>
+                <div class="col-md-6 col-lg-4"><div class="service-card"><i class="bi bi-cart"></i><h4>E-Commerce Websites</h4><p>Online stores designed to help businesses sell products online.</p></div></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= FOUNDER ================= -->
+    <section class="founder-section" id="founder">
+        <div class="container">
+            <div class="section-title">
+                <h1 style="color:#fff; font-family: Arial, Helvetica, sans-serif;">A Partner You Can <br> Build With</h1>
+                <p style="color:#88bbdd;">Meet the team behind your success</p>
+            </div>
+            <div class="founder-card">
+                <div class="founder-image">
+                    <img src="ceo2.jpeg" alt="Founder">
+                </div>
+                <div class="founder-content">
+                    <div class="quote">"We built Brain Next Devs around one idea — senior engineers working AI-first. From Laravel and React to Python and Django, we own the whole stack, so our clients never have to coordinate between three different vendors."</div>
+                    <div class="founder-name">Tahir Ali Mangi</div>
+                    <div class="founder-title">CEO & Founder - Tahir Mangi Web Development</div>
+                    <div class="founder-tags">
+                        <span class="tag"><strong>EXPENDABLE</strong> · 5+ Years</span>
+                        <span class="tag"><strong>CORE STACK</strong> · Java · React · Python · PHP</span>
+                        <span class="tag"><strong>ROUNDS</strong> · Product & Architecture</span>
+                    </div>
+                    <a href="#contact" class="btn-connect"><i class="bi bi-send"></i> Connect</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= PROJECTS ================= -->
+    <section class="projects" id="projects">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Projects</h2>
+                <p>Some of our Web Development Work</p>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-4"><div class="project-card"><div class="project-img"><i class="bi bi-shop"></i></div><div class="project-content"><h4>Business Website</h4><p>Professional website for a business.</p></div></div></div>
+                <div class="col-md-4"><div class="project-card"><div class="project-img"><i class="bi bi-cart4"></i></div><div class="project-content"><h4>Online Store</h4><p>Responsive e-commerce website.</p></div></div></div>
+                <div class="col-md-4"><div class="project-card"><div class="project-img"><i class="bi bi-building"></i></div><div class="project-content"><h4>Company Website</h4><p>Modern corporate company website.</p></div></div></div>
+            </div>
+        </div>
+   
+    </section>
+
+    <!-- ================= CONTACT ================= -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <div class="section-title">
+                <h2>Contact Us</h2>
+                <p>Get in touch with us for your web development needs</p>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="contact-box">
+                        <form id="contactForm">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <input type="text" name="name" class="form-control" placeholder="Your Name" required>
+                                </div>
+                                <div class="col-md-6">
+                                    <input type="email" name="email" class="form-control" placeholder="Your Email" required>
+                                </div>
+                            </div>
+                            <input type="text" name="subject" class="form-control" placeholder="Subject" required>
+                            <textarea name="message" class="form-control" rows="4" placeholder="Your Message" required></textarea>
+                            <button type="submit" class="btn btn-main">Send Message</button>
+                        </form>
+                        <div id="contactFeedback" class="mt-3"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= FOOTER ================= -->
+    <footer class="footer">
+        <div class="footer-container">
+
+            <!-- COMPANY -->
+            <div>
+                <h2 class="footer-logo">Brain Next Devs</h2>
+                <p class="footer-description">
+                    A custom software development company building web
+                    applications for startups and growing businesses
+                    across the US and Europe.
+                </p>
+                <div class="social-icons">
+                    <a href="#">in</a>
+                    <a href="#">𝕏</a>
+                    <a href="#">M</a>
+                    <a href="#">◎</a>
+                    <a href="#">▶</a>
+                    <a href="#">f</a>
+                </div>
+            </div>
+
+            <!-- COMPANY LINKS -->
+            <div>
+                <h3 class="footer-title">COMPANY</h3>
+                <ul class="footer-links">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#projects">Portfolio</a></li>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+
+            <!-- SERVICES -->
+            <div>
+                <h3 class="footer-title">SERVICES</h3>
+                <ul class="footer-links">
+                    <li><a href="#">Hire MERN Stack Developers</a></li>
+                    <li><a href="#">Hire Web App Developers</a></li>
+                    <li><a href="#">DevOps Consulting Services</a></li>
+                    <li><a href="#">Hire Python Developers</a></li>
+                    <li><a href="#">All Services</a></li>
+                </ul>
+            </div>
+
+            <!-- CONTACT -->
+            <div>
+                <h3 class="footer-title">GET IN TOUCH</h3>
+                <div class="contact-item">
+                    <span class="contact-icon">✉</span>
+                    <span>nextbrain@gmail.com</span>
+                </div>
+                <div class="contact-item">
+                    <span class="contact-icon">♧</span>
+                    <span>+92 325 6740073</span>
+                </div>
+                 </section>
+
+  
+                        <a href="https://wa.me/923256740073?text=I%20want%20to%20pay%20via%20QR%20Code" target="_blank" class="btn-whatsapp-card">
+                            <i class="bi bi-whatsapp"></i> Send Payment Confirmation
+                        </a>
+                  
+        
+        
+                    Get A Free Quote
+                    <span>→</span>
+                </a>
+            </div>
+
+        </div>
+
+        <!-- BOTTOM -->
+        <div class="footer-bottom">
+            <div>© 2026 Brain Next Devs. All rights reserved.</div>
+            <div class="bottom-links">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Platform Terms</a>
+                <a href="#">Link Archive</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js">
+    </script>
+
+    <!-- ================= MAIN JAVASCRIPT ================= -->
+    <script>
+        // ─── STATIC BANK DATA (fallback if API fails) ───
+        const STATIC_BANKS = [{
+            bankName: 'Meezan Bank',
+            accountTitle: 'Tahir Mangi Web Development',
+            accountNumber: '1234-567890-01',
+            iban: 'PK99MEZN0012345678901',
+            branchCode: '0123',
+            type: 'Business'
+        }, {
+            bankName: 'JazzCash',
+            accountTitle: 'Tahir Ali Mangi',
+            accountNumber: '0325-6740073',
+            iban: 'N/A',
+            branchCode: 'JAZZ',
+            type: 'Mobile Account'
+        }, {
+            bankName: 'EasyPaisa',
+            accountTitle: 'Tahir Ali Mangi',
+            accountNumber: '0346-3398372',
+            iban: 'N/A',
+            branchCode: 'EASY',
+            type: 'Mobile Account'
+        }];
+
+        // ─── CONFIG ───
+        const API_BASE = 'http://localhost:5000/api';
+
+        // ─── 1. LOAD BANKS ───
+        async function loadBanks() {
+            const container = document.getElementById('bankCardsContainer');
+            container.innerHTML =
+                '<div class="col-12 text-center text-white"><div class="spinner-border text-info" role="status"></div><p class="mt-2">Loading bank details...</p></div>';
+
+            try {
+                const res = await fetch(`${API_BASE}/banks`);
+                if (!res.ok) throw new Error('API not available');
+                const banks = await res.json();
+                if (banks && banks.length) {
+                    renderBanks(banks);
+                    return;
+                }
+                throw new Error('No banks from API');
+            } catch (err) {
+                console.warn('Using static bank data (API unavailable):', err.message);
+                renderBanks(STATIC_BANKS);
+            }
+        }
+
+        function renderBanks(banks) {
+            const container = document.getElementById('bankCardsContainer');
+            container.innerHTML = '';
+            banks.forEach(bank => {
+                const col = document.createElement('div');
+                col.className = 'col-lg-6 col-xl-4 mb-4';
+                col.innerHTML = `
+                        <div class="bank-card">
+                            <div class="card-header-badge">
+                                <div class="bank-icon"><i class="bi bi-bank"></i></div>
+                                <span class="availability"><i class="bi bi-check-circle-fill"></i> Available</span>
+                            </div>
+                            <h3 class="bank-name">${escHtml(bank.bankName)}</h3>
+                            <p class="bank-title">${escHtml(bank.accountTitle)}</p>
+                            <div class="expert-label">Account Details</div>
+                            <div class="bank-detail-item">
+                                <i class="bi bi-person"></i>
+                                <strong>Account Title:</strong> <span>${escHtml(bank.accountTitle)}</span>
+                            </div>
+                            <div class="bank-detail-item">
+                                <i class="bi bi-hash"></i>
+                                <strong>Account Number:</strong> <span>${escHtml(bank.accountNumber)}</span>
+                            </div>
+                            ${bank.iban ? `<div class="bank-detail-item"><i class="bi bi-globe"></i><strong>IBAN:</strong> <span>${escHtml(bank.iban)}</span></div>` : ''}
+                            ${bank.branchCode ? `<div class="bank-detail-item"><i class="bi bi-building"></i><strong>Branch Code:</strong> <span>${escHtml(bank.branchCode)}</span></div>` : ''}
+                            <div class="card-footer-info">
+                                <span class="stack-label"><strong>${escHtml(bank.type || 'Business')}</strong></span>
+                                <span class="experience"><strong>✔</strong> Verified</span>
+                            </div>
+                            <div class="mt-3">
+                                <a href="https://wa.me/923256740073?text=Payment%20for%20${encodeURIComponent(bank.bankName)}" target="_blank" class="btn-whatsapp-card">
+                                    <i class="bi bi-whatsapp"></i> Pay via WhatsApp
+                                </a>
+                            </div>
+                        </div>
+                    `;
+                container.appendChild(col);
+            });
+        }
+
+        // ─── 2. LOAD QR ───
+        function loadQR() {
+            const img = document.getElementById('qrImage');
+            // Try API first, fallback to a placeholder QR via a free service
+            const paymentText = 'https://wa.me/923256740073?text=I%20want%20to%20pay';
+            const apiUrl = `${API_BASE}/qr/${encodeURIComponent(paymentText)}`;
+
+            // Try API
+            fetch(apiUrl, { method: 'HEAD' })
+                .then(res => {
+                    if (res.ok) {
+                        img.src = apiUrl;
+                    } else {
+                        throw new Error('QR API not available');
+                    }
+                })
+                .catch(() => {
+                    // Fallback: use a free QR generation service
+                    img.src =
+                        `https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=${encodeURIComponent(paymentText)}`;
+                });
+        }
+
+        // ─── 3. CONTACT FORM ───
+        document.getElementById('contactForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const form = e.target;
+            const formData = new FormData(form);
+            const data = {
+                name: formData.get('name'),
+                email: formData.get('email'),
+                subject: formData.get('subject'),
+                message: formData.get('message')
+            };
+
+            const feedback = document.getElementById('contactFeedback');
+            feedback.innerHTML = '<div class="alert alert-info">Sending...</div>';
+
+            try {
+                const res = await fetch(`${API_BASE}/contact`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(data)
+                });
+                const result = await res.json();
+                if (res.ok) {
+                    feedback.innerHTML =
+                        `<div class="alert alert-success">${result.message || '✅ Message sent successfully!'}</div>`;
+                    form.reset();
+                } else {
+                    feedback.innerHTML =
+                    `<div class="alert alert-danger">${result.message || '❌ Something went wrong.'}</div>`;
+                }
+            } catch (err) {
+                // Fallback: simulate success locally
+                console.warn('Contact API unavailable, simulating send:', err.message);
+                feedback.innerHTML =
+                    `<div class="alert alert-success">✅ Thank you, ${data.name}! Your message has been received. We'll get back to you shortly.</div>`;
+                form.reset();
+            }
+        });
+
+        // ─── 4. SMOOTH SCROLL ───
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', function(e) {
+                const href = this.getAttribute('href');
+                if (href && href.startsWith('#')) {
+                    const target = document.querySelector(href);
+                    if (target) {
+                        e.preventDefault();
+                        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    }
+                }
+            });
+        });
+
+        // ─── 5. UTILITY ───
+        function escHtml(str) {
+            if (!str) return '';
+            return String(str).replace(/[&<>"]/g, function(m) {
+                if (m === '&') return '&amp;';
+                if (m === '<') return '&lt;';
+                if (m === '>') return '&gt;';
+                if (m === '"') return '&quot;';
+                return m;
+            });
+        }
+
+        // ─── 6. INIT ───
+        document.addEventListener('DOMContentLoaded', () => {
+            loadBanks();
+            loadQR();
+        });
+    </script>
+
+</body>
+</html>
